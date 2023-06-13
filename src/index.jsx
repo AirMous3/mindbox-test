@@ -1,7 +1,7 @@
 import { render } from 'react-dom';
 
-import { App } from '@/components';
-import { GlobalStyle } from '@/shared/styles/global-styles/global-styles';
+import { App } from '@/pages';
+import { GlobalStyle } from '@/shared';
 
 render(
   <>
