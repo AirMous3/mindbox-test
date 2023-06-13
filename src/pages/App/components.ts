@@ -22,6 +22,14 @@ export const Footer = styled.footer`
   button {
     cursor: pointer;
   }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    height: unset;
+    gap: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 `;
 
 export const ButtonsWrapper = styled.div`
