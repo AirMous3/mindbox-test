@@ -9,3 +9,22 @@ export const Main = styled.div`
   height: 100%;
   border-bottom: 0.32px solid rgba(34, 60, 80, 0.2);
 `;
+
+export const Footer = styled.footer`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: 0 2px 5px 0 rgba(34, 60, 80, 0.2);
+
+  button {
+    cursor: pointer;
+  }
+`;
+
+export const ButtonsWrapper = styled.div`
+  display: flex;
+  gap: 20px;
+`;

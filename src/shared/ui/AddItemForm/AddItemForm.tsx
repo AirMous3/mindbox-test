@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import * as S from './components';
 
 interface AddItemFormInterface {
-  onAddTask: (task: { title: string; id: string }) => void;
+  onAddTask: (task: { title: string; id: string; isDone: boolean }) => void;
 }
 
 const NULL = 0;
@@ -17,7 +17,7 @@ export const AddItemForm: React.FC<AddItemFormInterface> = React.memo(
       if (title.length === NULL) return;
 
       if (e.key === 'Enter') {
-        onAddTask({ title, id: uuidv4() });
+        onAddTask({ title, id: uuidv4(), isDone: false });
         setTitle('');
       }
     };

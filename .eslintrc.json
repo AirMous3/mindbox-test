@@ -88,6 +88,7 @@
       }
     ],
     "import/no-unresolved": "off",
+    "jsx-a11y/no-autofocus": "off",
     "import/extensions": "off",
     "import/prefer-default-export": "off",
     "import/order": [

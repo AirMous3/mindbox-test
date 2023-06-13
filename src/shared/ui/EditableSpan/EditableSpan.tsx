@@ -1,12 +1,15 @@
 import React, { ChangeEvent, ReactElement, useState } from 'react';
 
+import * as S from './components';
+
 interface EditableSpanInterface {
   title: string;
+  isDone: boolean;
   onChangeTaskTitle: (title: string) => void;
 }
 
 export const EditableSpan: React.FC<EditableSpanInterface> = React.memo(
-  ({ title, onChangeTaskTitle }): ReactElement => {
+  ({ title, onChangeTaskTitle, isDone }): ReactElement => {
     const [editMode, setEditMode] = useState(false);
     const [inputTitle, setInputTitle] = useState(title);
 
@@ -29,9 +32,12 @@ export const EditableSpan: React.FC<EditableSpanInterface> = React.memo(
         onDoubleClick={changeEditMode}
         onChange={onChangeTitleHandler}
         value={inputTitle}
+        autoFocus
       />
     ) : (
-      <span onDoubleClick={changeEditMode}>{inputTitle}</span>
+      <S.Span onDoubleClick={changeEditMode} isDone={isDone}>
+        {inputTitle}
+      </S.Span>
     );
   },
 );

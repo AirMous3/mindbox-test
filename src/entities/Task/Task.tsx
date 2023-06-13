@@ -7,11 +7,13 @@ import { EditableSpan } from '@/shared';
 interface TaskInterface {
   title: string;
   id: string;
+  isDone: boolean;
   onChangeTaskTitle: (title: string, id: string) => void;
+  onChangeIsDone: (id: string) => void;
 }
 
 export const Task: React.FC<TaskInterface> = React.memo(
-  ({ title, onChangeTaskTitle, id }): ReactElement => {
+  ({ title, onChangeTaskTitle, id, onChangeIsDone, isDone }): ReactElement => {
     const handleChangTaskTitle = useCallback(
       (newTitle: string) => {
         onChangeTaskTitle(newTitle, id);
@@ -21,7 +23,13 @@ export const Task: React.FC<TaskInterface> = React.memo(
 
     return (
       <S.Container>
-        <EditableSpan title={title} onChangeTaskTitle={handleChangTaskTitle} />
+        <EditableSpan
+          title={title}
+          onChangeTaskTitle={handleChangTaskTitle}
+          isDone={isDone}
+        />
+
+        <S.Cross onClick={() => onChangeIsDone(id)} isDone={isDone} />
       </S.Container>
     );
   },
