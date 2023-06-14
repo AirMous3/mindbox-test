@@ -35,7 +35,7 @@ export const EditableSpan: React.FC<EditableSpanInterface> = React.memo(
         autoFocus
       />
     ) : (
-      <S.Span onDoubleClick={changeEditMode} isDone={isDone}>
+      <S.Span data-testid="span" onDoubleClick={changeEditMode} isDone={isDone}>
         {inputTitle}
       </S.Span>
     );

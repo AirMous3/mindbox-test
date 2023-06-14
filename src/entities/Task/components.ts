@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import cross from '@/shared/assets/icons/cross-icon.svg';
-import mark from '@/shared/assets/icons/mark.svg';
+import cross from '../../shared/assets/icons/cross-icon.svg';
+import mark from '../../shared/assets/icons/mark.svg';
 
 export const Container = styled.li`
   display: flex;

@@ -29,7 +29,11 @@ export const Task: React.FC<TaskInterface> = React.memo(
           isDone={isDone}
         />
 
-        <S.Cross onClick={() => onChangeIsDone(id)} isDone={isDone} />
+        <S.Cross
+          data-testid="cross"
+          onClick={() => onChangeIsDone(id)}
+          isDone={isDone}
+        />
       </S.Container>
     );
   },
